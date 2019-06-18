@@ -10,6 +10,9 @@ const LoadingScreen = () => {
 
     useEffect(() => {
         handleProgress();
+        return () => {
+            window.location.reload();
+        }
     }, [])
 
 
