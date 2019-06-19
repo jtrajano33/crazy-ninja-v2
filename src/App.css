@@ -133,7 +133,8 @@ body{
 }
 
 .gameover{
-    margin-top: 20%;
+    margin-top: 11%;
+    margin-bottom: 8%;
     letter-spacing: 5px;
 }
 
@@ -155,4 +156,8 @@ body{
 
 .buttonDesign:hover{
     transform: scale(1.1);
+}
+
+tr{
+  background-image: radial-gradient(transparent, #c19a6b, #4f3d21);
 }

@@ -5,9 +5,6 @@ import '../App.css'
 
 const LoadingScreen = () => {
 
-    // const [counter, setCounter] = useState(5);
-    // const [progress, setProgress] = useState(25)
-
     useEffect(() => {
         handleProgress();
         return () => {

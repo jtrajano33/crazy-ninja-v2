@@ -6,7 +6,7 @@ const HomePage = () => {
     return (
         <div className="canvas">
             <div className="ninja">
-                <img className="animated fadeOut infinite" src="images/ninja2.png" />
+                <img className="animated fadeOut infinite" src="images/ninja2.png" alt="ninja" />
             </div>
 
             <div className="myintro">

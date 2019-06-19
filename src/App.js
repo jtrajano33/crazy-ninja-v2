@@ -4,6 +4,7 @@ import HomePage from './containers/HomePage';
 import LoadingScreen from './containers/LoadingScreen';
 import SelectLevel from './containers/SelectLevel';
 import Game from './containers/Game';
+import LeaderBoard from './containers/LeaderBoard';
 
 function App() {
   const [level, setselectedLevel] = useState(1);
@@ -26,6 +27,7 @@ function App() {
           )}
         />
       </div>
+      <Route exact path='/leaderboard' component={LeaderBoard} />
     </BrowserRouter>
   );
 }

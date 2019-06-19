@@ -131,7 +131,8 @@ const Game = props => {
                     <h1>Game Over!</h1>
                     <p className="scoreFont">Your Score: <span id="finalScore"></span></p>
                 </div>
-                <div><Link to="/level"><button className="buttonDesign">Restart Game</button></Link></div>
+                <div><Link to="/level"><button>Restart Game</button></Link></div>
+                <div><Link to="/leaderboard"><button>Leaderboard</button></Link></div>
             </div>
         </div>
     )
