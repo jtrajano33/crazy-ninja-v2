@@ -5,9 +5,11 @@ import LoadingScreen from './containers/LoadingScreen';
 import SelectLevel from './containers/SelectLevel';
 import Game from './containers/Game';
 import LeaderBoard from './containers/LeaderBoard';
+import PlayerInfo from './containers/PlayerInfo';
 
 function App() {
   const [level, setselectedLevel] = useState(1);
+  const [name, setName] = useState(`player-${Math.round(Math.random()*1000)}`);
 
   return (
     <BrowserRouter>
@@ -17,16 +19,22 @@ function App() {
         <Route
           path='/level'
           render={(routeProps) => (
-            <SelectLevel {...routeProps}  setselectedLevel={ setselectedLevel} />
+            <SelectLevel {...routeProps} setselectedLevel={setselectedLevel} />
           )}
         />
         <Route
           path='/game'
           render={(routeProps) => (
-            <Game {...routeProps} level={level} />
+            <Game {...routeProps} level={level} name={name} />
           )}
         />
       </div>
+      <Route
+        path='/player'
+        render={(routeProps) => (
+          <PlayerInfo {...routeProps} setName={setName} name={name} />
+        )}
+      />
       <Route exact path='/leaderboard' component={LeaderBoard} />
     </BrowserRouter>
   );

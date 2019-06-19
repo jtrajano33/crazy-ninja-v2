@@ -45,7 +45,7 @@ const LoadingScreen = () => {
                 <div className="progress" id="progress" />
             </div>
             <p id="instruction">INSTRUCTION: Catch as many ninja as you can before the timer runs out<br />COMING SOON: Crazy Ninja on Mobile!</p>
-            <div id="nextPage"><Link to="/level">Click here to continue >></Link></div>
+            <div id="nextPage"><Link to="/player">Click here to continue >></Link></div>
 
         </div>
     )

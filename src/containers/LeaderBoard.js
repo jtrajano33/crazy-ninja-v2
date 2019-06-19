@@ -18,7 +18,7 @@ const LeaderBoard = () => {
         const difficulty = player.level === 1 ? 'Novice Ninja' : player.level === 2 ? 'Pro Ninja' : 'BossNinja';
         if (index <= 5) {
             return (
-                <tr>
+                <tr key={index}>
                     <td>{index + 1}</td>
                     <td>{player.name}</td>
                     <td>{difficulty}</td>

@@ -1,9 +1,11 @@
 import React, { useEffect } from "react";
 import { Link } from 'react-router-dom';
+import axios from "axios";
+import api from '../config/index'
 
 const Game = props => {
 
-    const { level } = props
+    const { level, name } = props
 
     let interval = level === 1? 1600 : level === 2? 1100 : 850;
 
@@ -80,6 +82,21 @@ const Game = props => {
     }
 
 
+    const addScoreToLeaderBoard = () => {
+        const data = {
+            name,
+            level,
+            score: ctr
+        }
+
+        axios.post(`${api.mongodbURI}/api/players`, data).then(res => {
+            props.history.push('/leaderboard')
+        })
+        .catch(err =>{
+            console.log(err)
+        })
+    }
+
     return (
         <div>
             <div className=" container canvas" id="canvasSize">
@@ -132,7 +149,7 @@ const Game = props => {
                     <p className="scoreFont">Your Score: <span id="finalScore"></span></p>
                 </div>
                 <div><Link to="/level"><button>Restart Game</button></Link></div>
-                <div><Link to="/leaderboard"><button>Leaderboard</button></Link></div>
+                <div><button onClick={addScoreToLeaderBoard}>Leaderboard</button></div>
             </div>
         </div>
     )
