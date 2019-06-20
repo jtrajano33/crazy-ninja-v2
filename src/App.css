@@ -161,3 +161,7 @@ body{
 tr{
   background-image: radial-gradient(transparent, #c19a6b, #4f3d21);
 }
+
+.table td, .table th {
+  vertical-align: middle;
+}

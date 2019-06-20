@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from 'react-router-dom';
 import axios from "axios";
-import api from '../config/index'
+import api from '../config/index';
+import shuriken from '../shuriken.png';
+import '../App.css';
 
 const Game = props => {
+
+    const [isLoading, setIsLoading] = useState(false)
 
     const { level, name } = props
 
@@ -82,7 +86,10 @@ const Game = props => {
     }
 
 
+    const buttonImage = isLoading? (<img className="animated rotateOut infinite" src={shuriken} width="60px" />) : 'Leaderboard';
+
     const addScoreToLeaderBoard = () => {
+        setIsLoading(true)
         const data = {
             name,
             level,
@@ -91,6 +98,7 @@ const Game = props => {
 
         axios.post(`${api.mongodbURI}/api/players`, data).then(res => {
             props.history.push('/leaderboard')
+            setInterval(false)
         })
         .catch(err =>{
             console.log(err)
@@ -149,7 +157,7 @@ const Game = props => {
                     <p className="scoreFont">Your Score: <span id="finalScore"></span></p>
                 </div>
                 <div><Link to="/level"><button>Restart Game</button></Link></div>
-                <div><button onClick={addScoreToLeaderBoard}>Leaderboard</button></div>
+                <div><button onClick={addScoreToLeaderBoard}>{buttonImage}</button></div>
             </div>
         </div>
     )
