@@ -116,14 +116,14 @@ const Game = props => {
                 <span id="addScore1">Score: 0</span>
                 <span id="countdowntimer">Time left: 60</span>
 
-                <div className="row">
+                {/* <div className="row">
                     <div className="col-md-12">
                         <img className="img-fluid hiding4" alt="ninja" src="images/tree.png" />
                     </div>
 
-                </div>
+                </div> */}
 
-                <div className="row">
+                {/* <div className="row">
                     <div className="col-md-6">
                         <img className="img-fluid hiding2" alt="ninja" src="images/rock.png" />
                     </div>
@@ -132,9 +132,9 @@ const Game = props => {
                         <img className="img-fluid hiding3" alt="ninja" src="images/rock.png" />
                     </div>
 
-                </div>
+                </div> */}
 
-
+{/* 
                 <div className="row">
                     <div className="col-md-4">
                         <img className="img-fluid hiding" alt="ninja" src="images/grass.png" />
@@ -147,7 +147,7 @@ const Game = props => {
                     <div className="col-md-4">
                         <img className="img-fluid hiding" alt="ninja" src="images/grass.png" />
                     </div>
-                </div>
+                </div> */}
 
             </div>
 
